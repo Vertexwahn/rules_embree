@@ -15,19 +15,28 @@ To use these rules, add the following to your `WORKSPACE.bazel` file:
 ```bazel
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-_RULES_EMBREE_COMMIT = "652b21e35e4eeed5579e696da0facbe8dba52b1f"
+_RULES_EMBREE_COMMIT = "4ec4392626fe18d8f1272a795d0df4fefbd17006"
 
 http_archive(
-    name = "com_github_nelhage_rules_boost",
-    #sha256 = "c1b8b2adc3b4201683cf94dda7eef3fc0f4f4c0ea5caa3ed3feffe07e1fb5b15",
-    strip_prefix = "rules_embree-%s" % _RULES_BOOST_COMMIT,
+    name = "de_vertexwahn_rules_embree",
+    #sha256 = <REPLACE_WITH_SHA256>,
+    strip_prefix = "rules_embree-%s" % _RULES_EMBREE_COMMIT,
     urls = [
-        "https://github.com/Vertexwahn/rules_embree/archive/%s.tar.gz" % _RULES_BOOST_COMMIT,
+        "https://github.com/Vertexwahn/rules_embree/archive/%s.tar.gz" % _RULES_EMBREE_COMMIT,
     ],
 )
 
 load("@de_vertexwahn_rules_embree//:embree/embree.bzl", "embree_deps")
 embree_deps()
+```
+
+## How to test?
+
+```shell
+git clone https://github.com/Vertexwahn/rules_embree.git
+cd rules_embree
+cd test
+bazel build --config=gcc11 //... # See test/.bazelrc for other supported configs
 ```
 
 ## License

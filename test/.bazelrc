@@ -3,10 +3,6 @@
 #   SPDX-License-Identifier: Apache-2.0
 #
 
-# Supported OS identifiers are linux, macos, windows, freebsd, and openbsd.
-# Ignored for now - details here: https://stackoverflow.com/questions/73873449/can-enable-platform-specific-config-be-ignored-or-overriden
-# build --enable_platform_specific_config
-
 build --symlink_prefix=/ # Suppress symlink creation (to avoid untracked files issues with git)
 
 # GCC 9.3
