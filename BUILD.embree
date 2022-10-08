@@ -50,7 +50,6 @@ COMMON_DEFINES = select({
 
 expand_template(
     name = "rtcore_config_h",
-    template = "kernels/rtcore_config.h.in",
     out = "include/embree3/rtcore_config.h",
     substitutions = {
         "@EMBREE_VERSION_MAJOR@": "3",
@@ -64,11 +63,11 @@ expand_template(
         "#cmakedefine EMBREE_API_NAMESPACE": "/* #undef EMBREE_API_NAMESPACE */",
         "@EMBREE_API_NAMESPACE@": "",
     },
+    template = "kernels/rtcore_config.h.in",
 )
 
 expand_template(
     name = "config_h",
-    template = "kernels/config.h.in",
     out = "kernels/config.h",
     substitutions = {
         "#cmakedefine EMBREE_RAY_MASK": "/* #undef EMBREE_RAY_MASK */",
@@ -90,15 +89,16 @@ expand_template(
         "#cmakedefine EMBREE_DISC_POINT_SELF_INTERSECTION_AVOIDANCE": "#define EMBREE_DISC_POINT_SELF_INTERSECTION_AVOIDANCE",
         "@EMBREE_CURVE_SELF_INTERSECTION_AVOIDANCE_FACTOR@": "2.0",
     },
+    template = "kernels/config.h.in",
 )
 
 expand_template(
     name = "hash_h",
-    template = "kernels/hash.h.in",
     out = "kernels/hash.h",
     substitutions = {
         "@EMBREE_HASH@": "7c53133eb21424f7f0ae1e25bf357e358feaf6ab",
     },
+    template = "kernels/hash.h.in",
 )
 
 cc_library(
