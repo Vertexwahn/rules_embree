@@ -1,0 +1,36 @@
+Subject: [PATCH] fix includes
+
+---
+ kernels/common/default.h  | 2 +-
+ kernels/common/device.cpp | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git kernels/common/default.h kernels/common/default.h
+index f15d61b76..5f317a808 100644
+--- kernels/common/default.h
++++ kernels/common/default.h
+@@ -39,7 +39,7 @@
+ 
+ #define COMMA ,
+ 
+-#include "../config.h"
++#include "kernels/config.h"
+ #include "isa.h"
+ #include "stat.h"
+ #include "profile.h"
+diff --git kernels/common/device.cpp kernels/common/device.cpp
+index 833ec6513..3934348cf 100644
+--- kernels/common/device.cpp
++++ kernels/common/device.cpp
+@@ -2,7 +2,7 @@
+ // SPDX-License-Identifier: Apache-2.0
+ 
+ #include "device.h"
+-#include "../hash.h"
++#include "kernels/hash.h"
+ #include "scene_triangle_mesh.h"
+ #include "scene_user_geometry.h"
+ #include "scene_instance.h"
+-- 
+2.38.0
+

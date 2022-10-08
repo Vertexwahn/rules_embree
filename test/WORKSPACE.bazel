@@ -1,0 +1,59 @@
+"""
+    SPDX-FileCopyrightText: 2022 Julian Amann <dev@vertexwahn.de>
+    SPDX-License-Identifier: Apache-2.0
+"""
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
+
+#-------------------------------------------------------------------------------------
+# Embree
+#-------------------------------------------------------------------------------------
+
+local_repository(
+    name = "de_vertexwahn_rules_embree",
+    path = "..",
+)
+
+load("@de_vertexwahn_rules_embree//:embree/embree.bzl", "embree_deps")
+
+# embree_deps() will re-download the tarball every time BUILD.embree
+# changes, which is frustrating for doing development. Download it
+# yourself, uncomment the below and change the path as appropriate
+# for a faster iteration cycle on changes.
+#
+# new_local_repository(
+#     name = "embree",
+#     build_file = "@de_vertexwahn_rules_embree//:BUILD.embree",
+#     path = "/home/vertexwahn/code/boost_1_71_0/",
+# )
+
+embree_deps()
+
+#-------------------------------------------------------------------------------------
+# GoogleTest
+#-------------------------------------------------------------------------------------
+
+maybe(
+    http_archive,
+    name = "com_google_googletest",
+    sha256 = "949970eb7555eb741bad91b1687326d5379746947c8257eccb4405c2bf7fcfb8",
+    strip_prefix = "googletest-08935483cb22749b3c3774e9bcd5ef35b5a1a7b7",
+    urls = ["https://github.com/google/googletest/archive/08935483cb22749b3c3774e9bcd5ef35b5a1a7b7.zip"],
+)
+
+#-------------------------------------------------------------------------------------
+# rules_boost
+#-------------------------------------------------------------------------------------
+
+maybe(
+    http_archive,
+    name = "com_github_nelhage_rules_boost",
+    sha256 = "65670fec5210cccd45ff6d4ef69762feda49ac1bbd15eae344d79a8f5076c051",
+    strip_prefix = "rules_boost-630cf5dbad418ee8cfa637b1e33125b11807721d",
+    urls = ["https://github.com/nelhage/rules_boost/archive/630cf5dbad418ee8cfa637b1e33125b11807721d.zip"],
+)
+
+load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
+
+boost_deps()

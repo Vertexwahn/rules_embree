@@ -1,0 +1,16 @@
+"""
+    SPDX-FileCopyrightText: 2022 Julian Amann <dev@vertexwahn.de>
+    SPDX-License-Identifier: Apache-2.0
+"""
+
+cc_test(
+    name = "embree_test",
+    srcs = [
+        "embree_test.cpp",
+    ],
+    deps = [
+        "@boost//:predef",
+        "@com_google_googletest//:gtest_main",
+        "@embree",
+    ],
+)
