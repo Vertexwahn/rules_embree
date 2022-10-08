@@ -13,7 +13,7 @@ config_setting(
     visibility = ["//visibility:public"],
 )
 
-load("@de_vertexwahn_rules_embree//bazel:template_rule.bzl", "template_rule")
+load("@bazel_skylib//rules:expand_template.bzl", "expand_template")
 
 # If you want to use the internal tasking sytem use:
 # bazel build //... --define tasking_system=internal
@@ -48,9 +48,9 @@ COMMON_DEFINES = select({
     ],
 })
 
-template_rule(
+expand_template(
     name = "rtcore_config_h",
-    src = "kernels/rtcore_config.h.in",
+    template = "kernels/rtcore_config.h.in",
     out = "include/embree3/rtcore_config.h",
     substitutions = {
         "@EMBREE_VERSION_MAJOR@": "3",
@@ -66,9 +66,9 @@ template_rule(
     },
 )
 
-template_rule(
+expand_template(
     name = "config_h",
-    src = "kernels/config.h.in",
+    template = "kernels/config.h.in",
     out = "kernels/config.h",
     substitutions = {
         "#cmakedefine EMBREE_RAY_MASK": "/* #undef EMBREE_RAY_MASK */",
@@ -92,9 +92,9 @@ template_rule(
     },
 )
 
-template_rule(
+expand_template(
     name = "hash_h",
-    src = "kernels/hash.h.in",
+    template = "kernels/hash.h.in",
     out = "kernels/hash.h",
     substitutions = {
         "@EMBREE_HASH@": "7c53133eb21424f7f0ae1e25bf357e358feaf6ab",

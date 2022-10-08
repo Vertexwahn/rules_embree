@@ -4,11 +4,12 @@ SPDX-License-Identifier: Apache-2.0
 -->
 
 [![Support Ukraine](https://img.shields.io/badge/Support-Ukraine-FFD500?style=flat&labelColor=005BBB)](https://opensource.fb.com/support-ukraine)
+![BazelBuild](https://github.com/Vertexwahn/rules_embree/actions/workflows/bazel_build.yml/badge.svg)
 
 # rules_embree -- Bazel build rules for Intel Embree
 
 [Intel Embree](https://www.embree.org/) is a ray tracing kernel.
-This Bazel rules enable you to use Intel Embree within your Bazel project.
+These Bazel rules enable you to use Intel Embree within your Bazel project.
 
 To use these rules, add the following to your `WORKSPACE.bazel` file:
 
@@ -39,6 +40,14 @@ cd test
 bazel build --config=gcc11 //... # See test/.bazelrc for other supported configs
 ```
 
+## Further references
+
+I have written a two blog posts about bazelizing Embree:
+
+- [Bazel: Bazelizing Embree 3.13.0](https://vertexwahn.de/2021/07/30/bazelizingembre3.13.0/)
+- [Bazel: Bazelizing Embree 3.12.1](https://vertexwahn.de/2021/01/12/bazelizingembree3.12.1/)
+
+
 ## License
 
-This work is published under Apache 2.0 License.
+This work is published under the Apache 2.0 License.
