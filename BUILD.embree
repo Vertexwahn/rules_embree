@@ -620,7 +620,7 @@ cc_library(
     }),
     defines = COMMON_DEFINES + ["EMBREE_LOWEST_ISA"] +
               select({
-                  "@bazel_tools//platforms:osx": ["_XOPEN_SOURCE"],
+                  "@platforms//os:osx": ["_XOPEN_SOURCE"],
                   "//conditions:default": [],
               }),
     includes = [
@@ -636,8 +636,8 @@ cc_library(
     ],
     linkopts =
         select({
-            "@bazel_tools//platforms:windows": [],
-            "@bazel_tools//platforms:linux": [
+            "@platforms//os:windows": [],
+            "@platforms//os:linux": [
                 "-ldl",
                 "-lpthread",
                 "-lrt",
