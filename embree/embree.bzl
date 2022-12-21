@@ -11,8 +11,8 @@ def embree_deps():
     maybe(
         git_repository,
         name = "oneTBB",
-        commit = "6bfd29bde7e9c47bdfc3ae8a1670ea961c95c78c",
-        shallow_since = "1664967433 +0200",
+        commit = "e6104c9599f7f10473caf545199f7468c0a8e52f",
+        shallow_since = "1671635968 +0100",
         remote = "https://github.com/oneapi-src/oneTBB",
     )
 
