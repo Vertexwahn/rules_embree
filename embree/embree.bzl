@@ -11,8 +11,8 @@ def embree_deps():
     maybe(
         git_repository,
         name = "oneTBB",
-        commit = "e6104c9599f7f10473caf545199f7468c0a8e52f",
-        shallow_since = "1671635968 +0100",
+        commit = "45a99b4218b9feea441b8f1c683ef08379742180",
+        #shallow_since = "1671635968 +0100",
         remote = "https://github.com/oneapi-src/oneTBB",
     )
 
@@ -31,9 +31,9 @@ def embree_deps():
     maybe(
         http_archive,
         name = "bazel_skylib",
-        sha256 = "b8a1527901774180afc798aeb28c4634bdccf19c4d98e7bdd1ce79d1fe9aaad7",
+        sha256 = "66ffd9315665bfaafc96b52278f57c7e2dd09f5ede279ea6d39b2be471e7e3aa",
         urls = [
-            "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.4.1/bazel-skylib-1.4.1.tar.gz",
-            "https://github.com/bazelbuild/bazel-skylib/releases/download/1.4.1/bazel-skylib-1.4.1.tar.gz",
+            "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.4.2/bazel-skylib-1.4.2.tar.gz",
+            "https://github.com/bazelbuild/bazel-skylib/releases/download/1.4.2/bazel-skylib-1.4.2.tar.gz",
         ],
     )

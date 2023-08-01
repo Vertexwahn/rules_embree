@@ -15,7 +15,7 @@ config_setting(
 
 load("@bazel_skylib//rules:expand_template.bzl", "expand_template")
 
-# If you want to use the internal tasking sytem use:
+# If you want to use the internal tasking system use:
 # bazel build //... --define tasking_system=internal
 # The default tasking system is oneTBB
 config_setting(
@@ -631,7 +631,7 @@ cc_library(
         #"kernels/common",
         #"kernels/bvh",
         #"kernels/geometry",
-        #"kenerls/subdiv",
+        #"kernels/subdiv",
         #"kernels",
     ],
     linkopts =
