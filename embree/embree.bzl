@@ -12,7 +12,6 @@ def embree_deps():
         git_repository,
         name = "oneTBB",
         commit = "45a99b4218b9feea441b8f1c683ef08379742180",
-        #shallow_since = "1671635968 +0100",
         remote = "https://github.com/oneapi-src/oneTBB",
     )
 

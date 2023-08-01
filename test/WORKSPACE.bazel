@@ -37,9 +37,9 @@ embree_deps()
 maybe(
     http_archive,
     name = "com_google_googletest",
-    sha256 = "949970eb7555eb741bad91b1687326d5379746947c8257eccb4405c2bf7fcfb8",
-    strip_prefix = "googletest-08935483cb22749b3c3774e9bcd5ef35b5a1a7b7",
-    urls = ["https://github.com/google/googletest/archive/08935483cb22749b3c3774e9bcd5ef35b5a1a7b7.zip"],
+    sha256 = "fa94eeeadde0b3c77e8b52b548342776ac7f0b23b0819330679c4eefdabd5260",
+    strip_prefix = "googletest-6f6ab4212aa02cfe02e480711246da4fc17b0761",
+    urls = ["https://github.com/google/googletest/archive/6f6ab4212aa02cfe02e480711246da4fc17b0761.zip"],
 )
 
 #-------------------------------------------------------------------------------------
@@ -49,9 +49,9 @@ maybe(
 maybe(
     http_archive,
     name = "com_github_nelhage_rules_boost",
-    sha256 = "65670fec5210cccd45ff6d4ef69762feda49ac1bbd15eae344d79a8f5076c051",
-    strip_prefix = "rules_boost-630cf5dbad418ee8cfa637b1e33125b11807721d",
-    urls = ["https://github.com/nelhage/rules_boost/archive/630cf5dbad418ee8cfa637b1e33125b11807721d.zip"],
+    sha256 = "708173439f5b18a124126b603a1962e4313d9e036e4d70cf66509b4f0907e7ee",
+    strip_prefix = "rules_boost-239bfe704d6a334d30390272148774d1442ae534",
+    urls = ["https://github.com/nelhage/rules_boost/archive/239bfe704d6a334d30390272148774d1442ae534.zip"],
 )
 
 load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
