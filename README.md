@@ -31,6 +31,8 @@ load("@de_vertexwahn_rules_embree//:embree/embree.bzl", "embree_deps")
 embree_deps()
 ```
 
+> **_NOTE:_** If you are using Bzlmod you can fetch Embree 4.3.0 using [this registry](https://github.com/Vertexwahn/bazel-registry).
+
 ## How to test?
 
 ```shell
