@@ -9,7 +9,21 @@ SPDX-License-Identifier: Apache-2.0
 # rules_embree -- Bazel build rules for Intel Embree
 
 [Intel Embree](https://www.embree.org/) is a ray tracing kernel.
-These Bazel rules enable you to use Intel Embree within your Bazel project.
+
+## Bzlmod support
+
+If you are using Bzlmod you can fetch Embree 4.3.0 using [the Bazel Central Registry](https://registry.bazel.build/).
+
+Add to your `MODULE.bazel` file:
+
+
+```bazel
+bazel_dep(name = "embree", version = "4.3.0")
+```
+
+## Using a WORKSPACE file
+
+These Bazel rules enable you to use Intel Embree within your Bazel project using a `WORKSPACE`` file.
 
 To use these rules, add the following to your `WORKSPACE.bazel` file:
 
@@ -31,9 +45,7 @@ load("@de_vertexwahn_rules_embree//:embree/embree.bzl", "embree_deps")
 embree_deps()
 ```
 
-> **_NOTE:_** If you are using Bzlmod you can fetch Embree 4.3.0 using [the Bazel Central Registry](https://registry.bazel.build/).
-
-## How to test?
+### How to test?
 
 ```shell
 git clone https://github.com/Vertexwahn/rules_embree.git
