@@ -21,9 +21,12 @@ Add to your `MODULE.bazel` file:
 bazel_dep(name = "embree", version = "4.3.0")
 ```
 
+The underlying source code that makes this work is not part of this repository, but part of
+the [bazelbuild/bazel-central-registry](https://github.com/bazelbuild/bazel-central-registry/tree/main/modules/embree/4.3.0).
+
 ## Using a WORKSPACE file
 
-These Bazel rules enable you to use Intel Embree within your Bazel project using a `WORKSPACE`` file.
+These Bazel rules enable you to use Intel Embree within your Bazel project using a `WORKSPACE` file.
 
 To use these rules, add the following to your `WORKSPACE.bazel` file:
 
@@ -54,9 +57,20 @@ cd test
 bazel build --config=gcc11 //... # See test/.bazelrc for other supported configs
 ```
 
+## Bazelization of Embree
+
+If you are interested in how to bazelize the [Embree repository](https://github.com/embree/embree/) itself you can find all my attempts in the `third_party` folder.
+I have bazelized the Embree repository at different states:
+
+- Embree 3.12.1
+- Embree 3.13.0
+- Embree 3.13.4
+- Embree 3.13.5
+- Embree 4.3.0
+
 ## Further references
 
-I have written a two blog posts about bazelizing Embree:
+I have written two blog posts about bazelizing Embree:
 
 - [Bazel: Bazelizing Embree 3.13.0](https://vertexwahn.de/2021/07/30/bazelizingembre3.13.0/)
 - [Bazel: Bazelizing Embree 3.12.1](https://vertexwahn.de/2021/01/12/bazelizingembree3.12.1/)
